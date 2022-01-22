@@ -6,5 +6,5 @@ public static class DiceConfigHelper
 
     public static List<DieModel> DieModels = new();
 
-    public static IEnumerable<int> RollAll() => DieModels.Select(d => d.Roll(random));
+    public static void RollAll() => DieModels.ForEach(d => d.Roll(random));
 }

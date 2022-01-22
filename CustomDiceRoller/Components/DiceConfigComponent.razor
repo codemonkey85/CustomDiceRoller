@@ -1,10 +1,24 @@
-﻿@if (DiceConfigHelper.DieModels.Count > 0)
+﻿<div>
+    <div>
+        <label for="NumberOfDiceInput">Number of dice</label>
+        <input id="NumberOfDiceInput" type="number" min="1" @bind="NumberOfDice" />
+    </div>
+    <div>
+        <label for="NumberOfSidesInput">Number of sides</label>
+        <input id="NumberOfSidesInput" type="number" min="1" @bind="NumberOfSides" />
+    </div>
+    <div>
+        <button class="btn btn-primary" @onclick="RollAll">Roll</button>
+    </div>
+    <br />
+    <h2>Roll total: @RollTotal</h2>
+</div>
+@if (DiceConfigHelper.DieModels.Count > 0)
 {
-    <button class="btn btn-primary" @onclick="RollAll">Roll</button>
     <div class="dice-container">
-        @foreach (var dieRoll in DiceConfigHelper.RollAll())
+        @foreach (var dieModel in DiceConfigHelper.DieModels)
         {
-            <DieComponent RollResult=dieRoll />
+            <DieComponent DieModel=dieModel />
         }
     </div>
 }
