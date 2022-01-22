@@ -1,0 +1,11 @@
+﻿<h3>DiceConfigComponent</h3>
+
+@if (DiceConfigHelper.DieModels.Count > 0)
+{
+    <ul>
+        @foreach (var dieRoll in DiceConfigHelper.RollAll())
+        {
+            <DieComponent RollResult=dieRoll />
+        }
+    </ul>
+}
