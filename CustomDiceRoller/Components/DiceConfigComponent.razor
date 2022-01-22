@@ -1,11 +1,10 @@
-﻿<h3>DiceConfigComponent</h3>
-
-@if (DiceConfigHelper.DieModels.Count > 0)
+﻿@if (DiceConfigHelper.DieModels.Count > 0)
 {
-    <ul>
+    <button class="btn btn-primary" @onclick="RollAll">Roll</button>
+    <div class="dice-container">
         @foreach (var dieRoll in DiceConfigHelper.RollAll())
         {
             <DieComponent RollResult=dieRoll />
         }
-    </ul>
+    </div>
 }

@@ -12,4 +12,9 @@ public partial class DiceConfigComponent
             new DieModel { NumberOfSides = 6 },
         });
     }
+
+    private void RollAll()
+    {
+        DiceConfigHelper.RollAll();
+    }
 }
