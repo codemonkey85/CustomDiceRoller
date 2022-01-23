@@ -8,9 +8,17 @@
         <input id="NumberOfSidesInput" type="number" min="1" @bind="NumberOfSides" />
     </div>
     <div>
+        <label>Dice display type</label>
+        <select @bind="DiceConfigHelper.DiceDisplayType">
+            @foreach (var diceDisplayType in Enum.GetValues<Enums.DiceDisplayType>())
+            {
+                <option value="@diceDisplayType">@diceDisplayType.ToString()</option>
+            }
+        </select>
+    </div>
+    <div>
         <button class="btn btn-primary" @onclick="RollAll">Roll</button>
     </div>
-    <br />
     <h2>Roll total: @RollTotal</h2>
 </div>
 @if (DiceConfigHelper.DieModels.Count > 0)

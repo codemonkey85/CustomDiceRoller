@@ -2,7 +2,9 @@
 
 public static class DiceConfigHelper
 {
-    private static Random random = new();
+    private static readonly Random random = new();
+
+    public static Enums.DiceDisplayType DiceDisplayType = Enums.DiceDisplayType.Number;
 
     public static List<DieModel> DieModels = new();
 
