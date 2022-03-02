@@ -1,5 +1,4 @@
-﻿using System;
-namespace CustomDiceRoller;
+﻿namespace CustomDiceRoller;
 
 public static class Enums
 {

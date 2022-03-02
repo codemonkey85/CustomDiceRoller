@@ -10,7 +10,7 @@ public partial class DiceConfigComponent
     private void RollAll()
     {
         DiceConfigHelper.DieModels.Clear();
-        for (int i = 0; i < NumberOfDice; i++)
+        for (var i = 0; i < NumberOfDice; i++)
         {
             DiceConfigHelper.DieModels.Add(new DieModel { NumberOfSides = NumberOfSides });
         }
