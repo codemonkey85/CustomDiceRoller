@@ -1,15 +1,13 @@
-using Microsoft.AspNetCore.Components;
-
 namespace CustomDiceRoller.Components;
 
 public partial class DieComponent
 {
-    [Parameter]
-    public DieModel DieModel { get; set; }
+    [Parameter, EditorRequired]
+    public DieModel DieModel { get; set; } = default!;
 
     private (string BackgroundColor, string TextColor) defaultColor = ("white", "black");
 
-    private IDictionary<int, (string BackgroundColor, string TextColor)> NumberColors = new Dictionary<int, (string BackgroundColor, string TextColor)>
+    private readonly IDictionary<int, (string BackgroundColor, string TextColor)> NumberColors = new Dictionary<int, (string BackgroundColor, string TextColor)>
     {
         { 1, ("red", "black") },
         { 2, ("orange", "black") },
